@@ -24,7 +24,10 @@ $produtos = getProdutosEmDestaque();
         <nav class="menu">
             <a href="#"><i class="fas fa-home"></i> Início</a>
             <a href="#"><i class="fas fa-th-large"></i> Categorias</a>
-            <a href="#"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+            <a href="#" id="btn-carrinho">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="contador-carrinho">0</span>
+            </a>
             <a href="#"><i class="fas fa-user"></i> Minha Conta</a>
         </nav>
     </div>
@@ -48,6 +51,7 @@ $produtos = getProdutosEmDestaque();
         </section>
     </main>
 
+    <script src="assets/js/carrinho.js"></script>
   <footer>
     <p>© 2025 Loja Profissional. Todos os direitos reservados.</p>
   </footer>
