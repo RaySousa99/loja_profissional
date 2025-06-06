@@ -39,6 +39,7 @@ $produtos = getProdutosEmDestaque();
                 <div class="card-produto">
                     <img src="assets/images/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>" />
                     <h3><?= $produto['nome'] ?></h3>
+                    <p class="descricao"><?= $produto['descricao'] ?></p>
                     <p>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
