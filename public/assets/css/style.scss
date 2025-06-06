@@ -1,0 +1,127 @@
+// public/assets/css/style.scss
+
+$cor-fundo: #f9f9f9;
+$cor-primaria: #212121;
+$cor-secundaria: #009688;
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: $cor-fundo;
+    color: $cor-primaria;
+    margin: 0;
+}
+
+// Topo e menu
+
+.topo {
+    background-color: $cor-secundaria;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h1 {
+        font-size: 24px;
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    form {
+        display: flex;
+        input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        button {
+            padding: 8px 10px;
+            background: darken($cor-secundaria, 10%);
+            border: none;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+    }
+
+    .menu {
+        display: flex;
+        gap: 15px;
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Produtos
+
+.produtos {
+    padding: 40px 20px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: $cor-primaria;
+    }
+
+    .grid-produtos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .card-produto {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+
+        img {
+            max-width: 150px;
+            border-radius: 10px;
+        }
+
+        h3 {
+            margin: 15px 0 5px;
+        }
+
+        p {
+            color: $cor-secundaria;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .btn-comprar {
+            background: $cor-secundaria;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                background: darken($cor-secundaria, 10%);
+            }
+        }
+    }   
+}
+
+.footer {
+    background: #212121;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}

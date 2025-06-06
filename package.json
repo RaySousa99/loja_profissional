@@ -1,0 +1,28 @@
+{
+  "name": "loja_profissional",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaySousa99/loja_profissional.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaySousa99/loja_profissional/issues"
+  },
+  "homepage": "https://github.com/RaySousa99/loja_profissional#readme",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.89.1",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "sass": "sass public/assets/css/style.scss public/assets/css/style.css --watch",
+    "ts": "tsc --watch"
+  }
+}

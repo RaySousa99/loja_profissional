@@ -1,0 +1,14 @@
+{
+    "name": "raysousa/loja_profissional",
+    "description": "Sistema completo para loja online",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ray Sousa",
+            "email": "raysousaml@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
