@@ -1,0 +1,19 @@
+# Ignorar dependências PHP
+/vendor
+
+# Ignorar dependências Node.js
+/node_modules
+
+# Ignorar arquivos sensíveis
+.env
+*.log
+.idea/
+*.sql
+
+# Ignorar cache
+*.cache
+*.tmp
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
