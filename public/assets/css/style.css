@@ -84,6 +84,11 @@ body {
   font-weight: bold;
   font-size: 18px;
 }
+.produtos .card-produto .descricao {
+  color: gray;
+  font-size: 18px;
+  font-weight: normal;
+}
 .produtos .card-produto .btn-comprar {
   background: #009688;
   color: white;
