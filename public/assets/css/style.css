@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+main {
+  min-height: 80vh;
+}
+
 .topo {
   background-color: #009688;
   color: white;

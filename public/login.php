@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (isset($_SESSION['usuario'])) {
+    header("Locarion: dashboard.php");
+    exit;
+}
+?>
+
 <!-- public/index.php -->
 <?php
 require_once __DIR__ . '/../src/models/ProdutoModel.php';
@@ -22,33 +30,29 @@ $produtos = getProdutosEmDestaque();
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
         <nav class="menu">
-            <a href="index.php"><i class="fas fa-home"></i> Início</a>
+            <a href="#"><i class="fas fa-home"></i> Início</a>
             <a href="#"><i class="fas fa-th-large"></i> Categorias</a>
             <a href="#" id="btn-carrinho">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="contador-carrinho">0</span>
             </a>
-            <a href="login.php"><i class="fas fa-user"></i> Minha Conta</a>
+            <a href="#"><i class="fas fa-user"></i> Minha Conta</a>
         </nav>
     </div>
     </header>
 
     <main>
-        <section class="produtos">
-            <h2>Produtos em Destaque</h2>
-            <div class="grid-produtos">
-                <?php foreach ($produtos as $produto): ?>
-                <!-- Aqui vão os cards de produtos dinâmicos futuramente -->
-                <div class="card-produto">
-                    <img src="assets/images/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>" />
-                    <h3><?= $produto['nome'] ?></h3>
-                    <p class="descricao"><?= $produto['descricao'] ?></p>
-                    <p>R$ <?= number_format($produto['preco'], 2, ',', '.') ?></p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </section>
+        <div class="container-login">
+            <h2>Login</h2>
+            <?php if (isset($_GET['erro'])): ?>
+                <p style="color: red;">E-mail ou senha inválidos</p>
+            <?php endif; ?>
+            <form action="../src/controllers/AuthController.php" method="post">
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" require>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" require>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
     </main>
 
     <script src="assets/js/carrinho.js"></script>
