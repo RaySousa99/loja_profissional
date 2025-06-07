@@ -10,7 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($usuario) {
         $_SESSION['usuario'] = $usuario;
-        header("Location: ../../public/dashboard.php");
+        
+        if ($usuario['tipo'] === 'admin') {
+            header("Location: ../../public/admin/painel.php");
+        } else {
+            header("Location: ../../public/cliente/painel.php");
+        }
         exit;
     } else {
         header("Location: ../../public/login.php?erro=1");
