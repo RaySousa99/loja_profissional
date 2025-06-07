@@ -46,14 +46,26 @@ $produtos = getProdutosEmDestaque();
 
     <main>
         <div class="container-login">
-            <h2>Login</h2>
+            <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+
             <?php if (isset($_GET['erro'])): ?>
-                <p style="color: red;">E-mail ou senha inválidos</p>
+                <div class="mensagem-erro">
+                    <i class="fas fa-exclamation-triangle"></i> E-mail ou senha inválidos
+                </div>
             <?php endif; ?>
+
             <form action="../src/controllers/AuthController.php" method="post">
-                <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
-                <button type="submit">Entrar</button>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Entrar</button>
             </form>
         </div>
     </main>
