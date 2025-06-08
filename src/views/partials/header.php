@@ -1,4 +1,6 @@
 <?php
+define('BASE_URL', '/loja_profissional/');
+
 if (session_status() === PHP_SESSION_NONE) session_start();
 ?>
 <!DOCTYPE html>
@@ -7,8 +9,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Profissional</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/style.css">
+    <script defer src="<?= BASE_URL ?>public/assets/js/app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
  </head>
  <body>
@@ -20,7 +22,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
         <nav class="menu">
-            <a href="index.php"><i class="fas fa-home"></i> Início</a>
+            <a href="<?= BASE_URL ?>public/index.php"><i class="fas fa-home"></i> Início</a>
             <a href="#"><i class="fas fa-th-large"></i> Categorias</a>
             <a href="#" id="btn-carrinho">
                 <i class="fas fa-shopping-cart"></i>

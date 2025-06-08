@@ -1,24 +1,23 @@
 <?php
-session_start();
+require_once __DIR__ . '/../../src/views/partials/header.php';
+
+// Verifica se é admin
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['tipo'] !== 'admin') {
-    header("Location: ../login.php");
+    header("Location: /login.php");
     exit;
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle</title>
-    <link rel="stylesheet" href="assets/css/style.scss">
-</head>
-<body>
-    <div class="painel">
-        <h1>Bem-vindo, <?= $_SESSION['usuario']['nome'] ?> (Administrador)</h1>
-        <p>
-            <a href="../logout.php">Sair</a>
-        </p>
+
+<main>
+    <div class="painel-admin">
+        <h2>Bem-vindo, <?= $_SESSION['usuario']['nome'] ?> (Admin)!</h2>
+        <ul>
+            <li><a href="#">Gerenciar produtos</a></li>
+            <li><a href="#">Pedidos dos clientes</a></li>
+            <li><a href="#">Configurações da loja</a></li>
+            <li><a href="../logout.php">Sair</a></li>
+        </ul>
     </div>
-</body>
-</html>
+</main>
+
+<?php require_once __DIR__ . '/../../src/views/partials/footer.php'; ?>

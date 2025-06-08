@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/loja_profissional/public/
+RewriteRule ^(.*)$ /loja_profissional/public/$1 [L]

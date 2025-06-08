@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once __DIR__ . '/../models/Usuario.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -8,14 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $usuario = buscarUsuarioPorEmailSenha($email, $senha);
 
+    // Verifica se o login foi bem-sucedido
     if ($usuario) {
         $_SESSION['usuario'] = $usuario;
         
-        if ($usuario['tipo'] === 'admin') {
-            header("Location: ../../public/admin/painel.php");
-        } else {
-            header("Location: ../../public/cliente/painel.php");
-        }
+        // Redireciona com base no tipo
+        $tipo = $usuario['tipo'];
+        header("Location: $tipo/painel.php");
         exit;
     } else {
         header("Location: ../../public/login.php?erro=1");

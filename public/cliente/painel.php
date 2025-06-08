@@ -1,24 +1,24 @@
 <?php
-session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['tipo'] !== 'cliente') {
-    header("Location: ../login.php");
+require_once __DIR__ . '/../../src/views/partials/header.php';
+
+// Verifica se é cliente
+if (!isset($_SESSION['usuario']['tipo']) || $_SESSION['usuario']['tipo'] !== 'cliente') {
+    header("Location: /login.php");
     exit;
 }
+
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Cliente</title>
-    <link rel="stylesheet" href="../assets/css/style.scss">
-</head>
-<body>
-    <div class="painel">
-        <h1>Olá, <?= htmlspecialchars($_SESSION['usuario']['nome']) ?>! Bem-vindo à loja.</h1>
-        <p>
-            <a href="../logout.php">Sair</a>
-        </p>
+
+<main>
+    <div class="painel-cliente">
+        <h2>Bem-vindo, <?= $_SESSION['usuario']['nome'] ?>!</h2>
+        <p>Você está no seu painel de cliente.</p>
+        <ul>
+            <li><a href="#">Meus pedidos</a></li>
+            <li><a href="#">Meus dados</a></li>
+            <li><a href="../logout.php">Sair</a></li>
+        </ul>
     </div>
-</body>
-</html>
+</main>
+
+<?php require_once __DIR__ . '/../../src/views/partials/footer.php'; ?>

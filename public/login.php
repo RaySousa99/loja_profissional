@@ -1,11 +1,10 @@
 <?php
 require_once __DIR__ . '/../src/views/partials/header.php';
+require_once __DIR__ . '/../src/controllers/AuthController.php';
 
 if (isset($_SESSION['usuario'])) {
-    if ($_SESSION['usuario']['tipo'] === 'admin') {
-        header("Location: admin/painel.php");
-    } else {
-        header("Location: cliente/painel.php");
+    if ($_SESSION['usuario']['tipo']) {
+        header("Location: $tipo/painel.php");
     }
 }
 ?>
@@ -20,7 +19,7 @@ if (isset($_SESSION['usuario'])) {
             </div>
         <?php endif; ?>
 
-        <form action="../src/controllers/AuthController.php" method="post">
+        <form action="<?= BASE_URL ?>public/login.php" method="post">
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
                 <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
